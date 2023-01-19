@@ -5,6 +5,7 @@ const Header = (props) => {
         <li className="mr-2"><a href='/'>Home</a></li>
         <li className="mr-2"><a href='/login'>Login</a></li>
         <li className="mr-2"><a href='/register'>Register</a></li>
+        <li className="mr-2"><a href='/poke'>Poke API</a></li>
       </ul>
     </nav>
   );

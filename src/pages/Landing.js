@@ -1,6 +1,6 @@
 const Landing = (props) => {
   return (
-    <p>Landing Page</p>
+    <p className="text-xl">Landing Page</p>
   );
 }
 export default Landing;
