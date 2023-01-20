@@ -26,6 +26,26 @@ const SearchPoke = (props) => {
     searchRequest(inputText)
   }
 
+  const favButtonHandler= (e) => {
+    e.preventDefault();
+
+    // console.log(receivedPokemon)
+
+    let sendingData = {
+      pokeId: receivedPokemon.id,
+      pokeName: receivedPokemon.species.name,
+      imgUrl: receivedPokemon.sprites.front_default,
+      author: sessionStorage.userId
+    }
+
+    const requestFavSave = async (data) => {
+      let request = await axios.post(`${process.env.REACT_APP_SERVER_URL}/poke/favorite`, data)
+      console.log(request)
+    } 
+
+    requestFavSave(sendingData)
+  }
+
   return (
     <>
       <div className='bg-red-200 w-screen p-12'>
@@ -35,6 +55,16 @@ const SearchPoke = (props) => {
             <input type='search' onChange={searchHandler} className='py-1 px-4 rounded-md' />
             <RedButton type='submit' text='Search' />
           </form>
+          {
+            receivedPokemon.length !== 0 ?
+            <div>
+              <form onSubmit={favButtonHandler}>
+                <RedButton type='submit' text='Save to Fav' />
+              </form>
+            </div>
+            :
+            null
+          }
         </div>
         {
           receivedPokemon.length !== 0 ? 
@@ -42,11 +72,6 @@ const SearchPoke = (props) => {
           :
           null
         }
-        <div>
-          <form>
-            <RedButton type='submit' text='Save to Fav' />
-          </form>
-        </div>
       </div>
     </>
 

@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import PokeLanding from './pages/poke/PokeLanding';
 import SearchPoke from './pages/poke/SearchPoke';
+import User from './pages/account/User';
 
 const App = (props) => {
 
@@ -34,6 +35,7 @@ const App = (props) => {
 
           {/* Logged In Route */}
           <Route element={<LoggedInRoute />}>
+            <Route path='/account' element={<User />} />
             <Route path='/poke' element={<PokeLanding />} />
             <Route path='/poke/search' element={<SearchPoke />} />
           </Route>
