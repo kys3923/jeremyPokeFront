@@ -55,6 +55,20 @@ const User = (props) => {
     requestToApi(sendingData)
   }
 
+  const movieBtnHandler = (e) => {
+    let movies = []
+    movies = receivedData.favMovies;
+
+    let sendingData = {
+      user: receivedData._id,
+      movies: movies
+    }
+
+    // const reqeustToApi = async (data) => {
+    //   const reqeust = await axios.post()
+    // }
+  }
+
   return (
     <div className='bg-yellow-200 flex flex-col'>
       <h2 className='text-2xl font-bold'>User Page</h2>
@@ -78,6 +92,7 @@ const User = (props) => {
             <p>{receivedData.contact}</p>
           </div>
           <button onClick={pokeBtnHandler} className='py-1 px-3 bg-red-500 text-white rounded-md'>See Favortie Pokemon</button>
+          <button onClick={movieBtnHandler} className='py-1 px-3 bg-red-500 text-white rounded-md'>See Favortie Movies</button>
         </div>
         :
         <p>Loading...</p>

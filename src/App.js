@@ -9,9 +9,12 @@ import Login from './pages/Login';
 import Landing from './pages/Landing';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
+import User from './pages/account/User';
+
 import PokeLanding from './pages/poke/PokeLanding';
 import SearchPoke from './pages/poke/SearchPoke';
-import User from './pages/account/User';
+
+import MovieLanding from './pages/movie/MovieLanding';
 
 const App = (props) => {
 
@@ -38,6 +41,7 @@ const App = (props) => {
             <Route path='/account' element={<User />} />
             <Route path='/poke' element={<PokeLanding />} />
             <Route path='/poke/search' element={<SearchPoke />} />
+            <Route path='/movie' element={<MovieLanding />} />
           </Route>
 
         </Routes>
